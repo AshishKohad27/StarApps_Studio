@@ -1,0 +1,20 @@
+[
+  {
+    "umbrella": "../img/Pink umbrella.png",
+    "color": "pink",
+    "background": "#FFF5F7",
+    "colorBtn": "#D53F8C"
+  },
+  {
+    "umbrella": "../img/Blue umbrella.png",
+    "color": "blue",
+    "background": "#EBF8FF",
+    "colorBtn": "#3182CE"
+  },
+  {
+    "umbrella": "../img/Yellow umbrella.png",
+    "color": "yellow",
+    "background": "#FFFFF0",
+    "colorBtn": "#D69E2E"
+  }
+]
