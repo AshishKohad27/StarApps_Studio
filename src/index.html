@@ -102,13 +102,19 @@
         border: 0px;
         cursor: pointer;
     }
+
+
+   
 </style>
 
 <body>
     <div id="main">
 
-        <div id="images">
-            <img src="../img/Blue umbrella.png" alt="blue" id="setImg">
+        <div id="imagesDiv">
+            <div id="imageContainer">
+                <div id="loader"></div>
+                <img id="setImg">
+            </div>
         </div>
 
         <div id="details">
@@ -137,22 +143,36 @@
         { umbrella: "../img/Pink umbrella.png", color: "pink", background: "#FFF5F7", colorBtn: "#D53F8C" },
         { umbrella: "../img/Blue umbrella.png", color: "blue", background: "#EBF8FF", colorBtn: "#3182CE" },
         { umbrella: "../img/Yellow umbrella.png", color: "yellow", background: "#FFFFF0", colorBtn: "#D69E2E" },
-    ]
+    ];
+
     let main = document.getElementById("main");
     let setImg = document.getElementById("setImg");
     let upload = document.getElementById("upload");
+    let loader = document.getElementById("loader");
 
     async function colorPalette(colorFromBtn) {
-
-
+        setImg.src = "";
         let filter = UmbrellaArr.filter((item) => item.color === colorFromBtn)[0];
-        console.log('filter:', filter)
+        //console.log('filter:', filter)
+
+        //loader.style.display = "block";
+        let result = await new Promise((resolve) => {
+            setImg.onload = resolve;
+            setImg.src = `${filter.umbrella}`;
+            setImg.style.display = "none";
+            setInterval(() => { console.log("loading...") }, 1000)
+            loader.innerHTML = "loading..."
+        });
+        loader.innerHTML = ""
+        setImg.style.display = "block";
+
+
+
         main.style.backgroundColor = `${filter.background}`;
         upload.style.backgroundColor = `${filter.colorBtn}`;
         console.log("Image Set Successfully")
-        setImg.src = `${filter.umbrella}`;
-
     }
+
 
 
 
