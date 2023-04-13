@@ -114,9 +114,9 @@
         <div id="details">
             <h1>Custom Umbrella</h1>
             <div id="colorPalette">
-                <button class="btn pink" ></button>
-                <button class="btn blue"></button>
-                <button class="btn yellow"></button>
+                <button class="btn pink" name="pink" onclick=`${colorPalette(name)}`></button>
+                <button class="btn blue" name="blue" onclick=`${colorPalette(name)}`></button>
+                <button class="btn yellow" name="yellow" onclick=`${colorPalette(name)}`></button>
             </div>
             <div class="uploadDetails">
                 <h4>Customized your umbrella</h4>
@@ -133,34 +133,29 @@
 </html>
 <script>
 
-    let arr = [
-        { umbrella: "../img/Pink umbrella.png", color: "pink" },
-        { umbrella: "../img/Blue umbrella.png", color: "blue" },
-        { umbrella: "../img/Yellow umbrella.png", color: "yellow" },
+    let UmbrellaArr = [
+        { umbrella: "../img/Pink umbrella.png", color: "pink", background: "#FFF5F7", colorBtn: "#D53F8C" },
+        { umbrella: "../img/Blue umbrella.png", color: "blue", background: "#EBF8FF", colorBtn: "#3182CE" },
+        { umbrella: "../img/Yellow umbrella.png", color: "yellow", background: "#FFFFF0", colorBtn: "#D69E2E" },
     ]
     let main = document.getElementById("main");
     let setImg = document.getElementById("setImg");
     let upload = document.getElementById("upload");
-  
-        console.log("hello", color)
-        let pink = document.querySelector(".pink").addEventListener("click", (event) => {
-            main.style.backgroundColor = "#FFF5F7";
-            upload.style.backgroundColor = "#D53F8C";
-            //console.log("event:", event)
 
-            setImg.src = "../img/Pink umbrella.png"
-        })
+    async function colorPalette(colorFromBtn) {
 
-    let blue = document.querySelector(".blue").addEventListener("click", (event) => {
-        main.style.backgroundColor = "#EBF8FF"
-        upload.style.backgroundColor = "#3182CE"
-        //console.log("event:", event)
-        setImg.src = "../img/Blue umbrella.png"
-    })
-    let yellow = document.querySelector(".yellow").addEventListener("click", (event) => {
-        main.style.backgroundColor = "#FFFFF0"
-        upload.style.backgroundColor = "#D69E2E"
-        //console.log("event:", event)
-        setImg.src = "../img/Yellow umbrella.png"
-    })
+
+        let filter = UmbrellaArr.filter((item) => item.color === colorFromBtn)[0];
+        console.log('filter:', filter)
+        main.style.backgroundColor = `${filter.background}`;
+        upload.style.backgroundColor = `${filter.colorBtn}`;
+        console.log("Image Set Successfully")
+        setImg.src = `${filter.umbrella}`;
+
+    }
+
+
+
+
+
 </script>
