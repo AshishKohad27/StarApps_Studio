@@ -116,6 +116,7 @@
   visibility: none;
 }
 #delete_logo {
+  cursor: pointer;
   margin-top: 8px;
   margin-right: 10px;
   font-size: 30px;
