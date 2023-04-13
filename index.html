@@ -123,3 +123,22 @@
 <script src="./index.js"></script>
 
 </html>
+<script>
+    let main = document.getElementById("main");
+    let upload = document.getElementById("upload")
+    let pink = document.querySelector(".pink").addEventListener("click", (event) => {
+        main.style.backgroundColor = "#FFF5F7";
+        upload.style.backgroundColor = "#D53F8C";
+        //console.log("event:", event)
+    })
+    let blue = document.querySelector(".blue").addEventListener("click", (event) => {
+        main.style.backgroundColor = "#EBF8FF"
+        upload.style.backgroundColor = "#3182CE"
+        //console.log("event:", event)
+    })
+    let yellow = document.querySelector(".yellow").addEventListener("click", (event) => {
+        main.style.backgroundColor = "#FFFFF0"
+        upload.style.backgroundColor = "#D69E2E"
+        //console.log("event:", event)
+    })
+</script>
