@@ -13,9 +13,15 @@
         height: 300px;
         border: 1px solid red;
     }
+    #logo_input::-webkit-file-upload-button {
+        
+        
+      }
+      
 </style>
 
 <body>
+   
     <div id="display_logo"></div>
     <input type="file" id="logo_input" accept="image/png, image/jpg" />
 
@@ -23,8 +29,9 @@
 <script>
     const logo_input = document.querySelector("#logo_input");
     var Uploaded_logo = "";
-    logo_input.addEventListener("change", function () {
-        //console.log(logo_input.value);//fake path
+    logo_input.addEventListener("change", function (e) {
+        console.log('e:', )
+        //console.log(logo_input.value);//fake.target.files[0].namee path
 
         let reader = new FileReader();
         reader.addEventListener("load", () => {

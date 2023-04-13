@@ -87,12 +87,40 @@
   height: 30px;
   font-weight: 600;
   color: white;
-  background-color: #3182ce;
+  background-color: #d53f8c;
   border: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#logo_label {
+  /* display: none; */
   cursor: pointer;
 }
+#logo_label > svg {
+  fill: white;
+  margin-left: 15px;
+}
 
-svg {
+#loader_UploadLogo {
+  display: none;
+  width: 28px;
+  height: 28px;
+  margin-left: 15px;
+  fill: #fff;
+  animation: rotate-keyframe linear 5s infinite;
+}
+
+#logo_input {
+  display: none;
+  visibility: none;
+}
+#delete_logo {
+  margin-top: 8px;
+  margin-right: 10px;
+  font-size: 30px;
+}
+#loaderSvg {
   display: none;
   width: 150px;
   height: 150px;
@@ -119,5 +147,38 @@ svg {
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+#umbrellaDiv {
+  position: relative;
+}
+
+#display_logo > img {
+  display: none;
+  position: absolute;
+  bottom: 30px;
+  left: 135px;
+  width: 130px;
+  height: 30px;
+}
+
+@media all and (min-width: 367px) and (max-width: 900px) {
+  #main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+  }
+
+  #images {
+    width: 100vw;
+  }
+
+  #details {
+    width: 60vw;   
   }
 }
