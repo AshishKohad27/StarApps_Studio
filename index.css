@@ -12,6 +12,7 @@
   align-items: center;
 }
 
+/* left side:- div Umbrella Image Div */
 #images {
   width: 60vw;
   height: 100vh;
@@ -21,10 +22,21 @@
   /* background-color: red; */
 }
 
+/* // umbrella image width */
 #setImg {
   width: 400px;
 }
 
+/* loader */
+#loaderSvg {
+  display: none;
+  width: 150px;
+  height: 150px;
+  fill: #3182ce;
+  animation: rotate-keyframe linear 5s infinite;
+}
+
+/* right side div */
 #details {
   width: 40vw;
   height: 100vh;
@@ -82,6 +94,7 @@
   margin-bottom: 10px;
 }
 
+/* Upload button , label, name,delete button */
 #upload {
   width: 270px;
   height: 30px;
@@ -121,14 +134,9 @@
   margin-right: 10px;
   font-size: 30px;
 }
-#loaderSvg {
-  display: none;
-  width: 150px;
-  height: 150px;
-  fill: #3182ce;
-  animation: rotate-keyframe linear 5s infinite;
-}
 
+
+/* loader keyframe */
 @keyframes rotate-keyframe {
   0% {
     transform: rotate(0deg);
@@ -164,6 +172,8 @@
   height: 30px;
 }
 
+
+/* for Mobile */
 @media all and (min-width: 367px) and (max-width: 900px) {
   #main {
     width: 100vw;
@@ -180,6 +190,6 @@
   }
 
   #details {
-    width: 60vw;   
+    width: 60vw;
   }
 }
